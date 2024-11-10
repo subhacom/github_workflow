@@ -48,7 +48,7 @@ jobs:
       - name: Activate micromamba (windows)
         if: runner.os == 'Windows'
         run: |
-	  shell hook -s powershell | Out-String | Invoke-Expression
+          shell hook -s powershell | Out-String | Invoke-Expression
           micromamba list
           micromamba info
           which micromamba
