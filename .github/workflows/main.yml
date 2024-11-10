@@ -40,7 +40,7 @@ jobs:
           micromamba list
           micromamba info
           which micromamba
-	  eval "$(micromamba shell hook --shell bash)"
+          eval "$(micromamba shell hook --shell bash)"
           micromamba activate moose
       - name: Display Python version
         run: |          
