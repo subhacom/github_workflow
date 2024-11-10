@@ -37,10 +37,10 @@ jobs:
             wheel
       - name: Activate environment
         run: |
-          micromamba shell init --shell bash --root-prefix=~/micromamba
           micromamba list
           micromamba info
           which micromamba
+	  eval "$(micromamba shell hook --shell bash)"
           micromamba activate moose
       - name: Display Python version
         run: |          
