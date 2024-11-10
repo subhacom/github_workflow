@@ -21,8 +21,6 @@ jobs:
         uses: mamba-org/setup-micromamba@v1
         with:
           environment-name: moose
-          init-shell: >-
-            bash
           create-args: >-
             python=${{ matrix.python-version }}
             hdf5
@@ -39,7 +37,7 @@ jobs:
           cache-downloads: true
           post-cleanup: all
           generate-run-shell: false
-      - name: enable shell hook for micromamba
+      - name: Enable shell hook for micromamba
         if: runner.os != 'Windows'
         run: eval "$(micromamba shell hook --shell bash)"
       - name: Activate environment        
