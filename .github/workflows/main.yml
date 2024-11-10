@@ -36,6 +36,7 @@ jobs:
             setuptools
             wheel
       - name: Activate environment
+        shell: _entrypoint.sh /bin/bash --noprofile --norc -eo pipefail {0}
         run: |
           micromamba list
           micromamba info
