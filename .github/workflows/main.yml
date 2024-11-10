@@ -36,7 +36,11 @@ jobs:
             setuptools
             wheel
       - name: Activate environment
-        run: mamba activate moose
+        run: |
+          micromamba list
+          micromamba info
+          which micromamba
+          micromamba activate moose
       - name: Display Python version
         run: |          
           python -c "import sys; print(sys.version)"
