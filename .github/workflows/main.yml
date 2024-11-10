@@ -41,7 +41,7 @@ jobs:
           generate-run-shell: false
       - name: enable shell hook for micromamba
         if: runner.os != 'Windows'
-          run: eval "$(micromamba shell hook --shell bash)"
+        run: eval "$(micromamba shell hook --shell bash)"
       - name: Activate environment        
         run: |
           micromamba list
