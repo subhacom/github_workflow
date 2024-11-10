@@ -25,7 +25,6 @@ jobs:
           cache-downloads: true
           init-shell: >-
             bash
-            powershell
           create-args: >-
             python=${{ matrix.python-version }}
             hdf5
