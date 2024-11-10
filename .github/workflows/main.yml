@@ -21,8 +21,6 @@ jobs:
         uses: mamba-org/setup-micromamba@v1
         with:
           environment-name: moose
-          cache-environment: true
-          cache-downloads: true
           init-shell: >-
             bash
           create-args: >-
@@ -37,6 +35,10 @@ jobs:
             doxygen
             setuptools
             wheel
+          cache-environment: true
+          cache-downloads: true
+          post-cleanup: all
+          generate-run-shell: false
       - name: Activate environment        
         run: |
           eval "$(micromamba shell hook --shell bash)"
