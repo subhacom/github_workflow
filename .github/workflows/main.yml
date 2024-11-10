@@ -39,6 +39,7 @@ jobs:
             wheel
       - name: Activate environment        
         run: |
+          eval "$(micromamba shell hook --shell bash)"
           micromamba list
           micromamba info
           which micromamba
