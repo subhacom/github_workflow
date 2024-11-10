@@ -46,8 +46,10 @@ jobs:
           micromamba activate moose
       - name: Display Python version
         run: |          
+          eval "$(micromamba shell hook --shell bash)"
           micromamba activate moose
           python -c "import sys; print(sys.version)"
       - name: Display C++
         run: |
+          eval "$(micromamba shell hook --shell bash)"
           clang --version
