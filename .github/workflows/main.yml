@@ -39,19 +39,19 @@ jobs:
           cache-downloads: true
           post-cleanup: all
           generate-run-shell: false
+      - name: enable shell hook for micromamba
+          if: runner.os != "Windows"
+          run: |
+            eval "$(micromamba shell hook --shell bash)"
       - name: Activate environment        
         run: |
-          eval "$(micromamba shell hook --shell bash)"
           micromamba list
           micromamba info
           which micromamba
           micromamba activate moose
       - name: Display Python version
         run: |          
-          eval "$(micromamba shell hook --shell bash)"
-          micromamba activate moose
           python -c "import sys; print(sys.version)"
       - name: Display C++
         run: |
-          eval "$(micromamba shell hook --shell bash)"
           clang --version
